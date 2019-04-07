@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2 class="speech-bubble">Hi {{user.user.firstName}}! Have you completed any of these tasks today?</h1>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row mt-5">
+    <!-- spacing -->
+    <div class="col-md-1"></div>
+    <!--
+    Avatar display
+    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                      -->
+    <div class="col-md-5 text-center" id="boojiDiv">
+      {{> avatar/avatar-image }}
+      <button type="submit" class="btn-lg btn-primary whiteborder mb-3" onclick="location.assign('/upgrade')">Upgrade my Boojiwoo</button>
+    </div>
+    <!--
+    Task display
+    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                      -->
+    <div class="col-md-5" id="buttonDiv">
+      <form id="buttonForm">
+        {{#each tasks}}
+          <button type="submit" class="btn-lg btn-success btn-block whiteborder mb-3 task-button" data-task="{{taskId}}">{{description}}</button>
+        {{/each}}
+      </form>
+    </div>
+
+    <!-- spacing -->
+    <div class="col-md-1"></div>
+  </div>
+  {{> nav/nav-footer }}
+</div> <!-- close container -->
+
+<!--
+Modals
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                          -->
+<!-- None yet Modal -->
+<div class="modal fade" id="noneYetModal" tabindex="-1" role="dialog" aria-labelledby="noneYetModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="noneYetModalLongTitle">Okay, give it your best!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Try to complete some of your tasks by the end of the day to earn Woopoints!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Task Acknowledgement Modal -->
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="taskModalLongTitle">Great job!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Way to go! Keep up the good work!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  allDone();
+</script>
