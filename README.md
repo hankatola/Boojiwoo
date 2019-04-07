@@ -1,17 +1,10 @@
-# Project 2 Starter with Auth
+# Boojiwoo
 
-A simple starter project with Express, Handlebars, Sequelize, Passport and Local Auth.
+A gamified task-tracking app for kids ages 8 - 12. Deployed to Heroku at https://boojiwoo.herokuapp.com/
 
-## Requirements:
+## Original Contributors 
 
-* Add `.env` file with the following content:
-
-```
-SEQUELIZE_USER=your_mysql_db_user
-SEQUELIZE_PASSWORD=your_mysql_db_password
-SEQUELIZE_HOST=your_mysql_db_host
-AUTH_SECRET=your_auth_secret_key
-ADMIN_USER_PWD=admin_password
-USER_PWD=user_pwd
-FORCE_SYNC=true_or_false
-```
+Brandon Howell
+Brendon Howell
+Sherry Carasco
+Dave Paquette
